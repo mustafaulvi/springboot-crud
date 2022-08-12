@@ -3,7 +3,6 @@ package com.example.springbootcrud.model;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,12 +15,14 @@ public class AddressBook {
     private String name;
     private String surName;
     private String address;
+    private String note;
     private String email;
+    private String website;
     private String telephone;
     @OneToMany
     private List<PersonGroup>  personGroups;
     @OneToMany
-    private ArrayList<ImportantDate> importantDates;
+    private List<ImportantDate> importantDates;
     @CreationTimestamp
     private Date createdAt;
     @CreationTimestamp
@@ -59,12 +60,28 @@ public class AddressBook {
         this.address = address;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
     public String getTelephone() {
@@ -83,11 +100,11 @@ public class AddressBook {
         this.personGroups = personGroups;
     }
 
-    public ArrayList<ImportantDate> getImportantDates() {
+    public List<ImportantDate> getImportantDates() {
         return importantDates;
     }
 
-    public void setImportantDates(ArrayList<ImportantDate> importantDates) {
+    public void setImportantDates(List<ImportantDate> importantDates) {
         this.importantDates = importantDates;
     }
 
